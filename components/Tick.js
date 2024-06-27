@@ -1,7 +1,8 @@
 import { Pressable,View,Text} from "react-native";
 import React, { useState, useEffect } from 'react';
-
+import { Entypo } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { AntDesign } from '@expo/vector-icons';
 
 export default function Tick({ element, refreshTasks }){
   
@@ -26,7 +27,7 @@ export default function Tick({ element, refreshTasks }){
         }}
     return(<View>
         <Pressable onPress={onPressTick1}>
-            <Text style={{color:isDone?"#00FF00":"#FF0000"}}>{isDone?"Done":"Todo"}
+            <Text>{isDone?<AntDesign name="checkcircle" size={25} color="green" />:<Entypo name="circle" size={25} color="red" />}
             </Text></Pressable>
     </View>)
     
